@@ -14,16 +14,186 @@ Dark green: #28b485
 
 }
 
+html {
+    font-size: 62.5%
+}
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
     color: #777;
+    padding: 30px;
+    /* frames the body */
 }
 
 .header {
+    position: relative;
+    /* parent element where reletive starts to count */
     height: 95vh;
-    background-image: url(../img/hero.jpg);
+    background-image: linear-gradient(
+        to right,
+        hsla(111, 55%, 64%, 0.8),
+        rgba(40, 180, 133, 0.8)),
+        url(../img/hero.jpg);
+    /* to right bottom etc. */
+    background-size:cover;
+    background-position: top; 
+    /* keeps image attached to the top, center, or bottom */
+
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%)
+    /* start top left corner go clockwise can use other measurments  */
+}
+
+.header__logo-box {
+    position:absolute;
+    top:40px;
+    left:40px;
+}
+
+.header__logo {
+    height: 3.5rem;
+}
+
+/* .logo:hover{
+    animation: moveInRight 1s ease-out;
+} */
+.heading-primary {
+    color: #ffff;
+    text-transform:uppercase;
+    margin-bottom: 6rem;
+}
+
+.header__text-box {
+    position:absolute;
+    top: 40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+    /* transform is relative to the element itself the absolute is to the parents */
+}
+.heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 700px;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: 3; */
+    backface-visibility: hidden;
+    /* just for fixing visibility shakiness */
+      
+    
+}
+.heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing:17.4px;
+    animation: moveInRight 1s ease-out 
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+/* can add rotate scale etc. */
+    80%{
+        transform: translateX(10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px)
+    }
+
+    80%{
+        transform: translateX(-10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+    /* look at codepen animation example to understand */
+}
+
+.btn:hover {
+    transform:translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn--white {
+    background-color: #fff;
+    color:#777;
+}
+
+.btn::after {
+    content:"";
+    display: inline-block;
+    /* needed for this to work above */
+    height: 100%;
+    width: 100%;
+    /* after psudo element will have same size as button */
+    border-radius: 100px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+    /* auto adds 0% status to animations before it starts */
     
 }
