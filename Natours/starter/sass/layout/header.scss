@@ -1,47 +1,46 @@
 .header {
-    position: relative;
-    /* parent element where reletive starts to count */
-    height: 95vh;
-    background-image: linear-gradient(
-        to right,
-        rgba($color-primary-light, 0.8),
-        rgba($color-primary-dark, 0.8)),
-        url(../img/hero.jpg);
-    /* to right bottom etc. */
-    background-size:cover;
-    background-position: top; 
-    /* keeps image attached to the top, center, or bottom */
+  position: relative;
+  /* parent element where reletive starts to count */
+  height: 95vh;
+  background-image: linear-gradient(
+      to right,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  /* to right bottom etc. */
+  background-size: cover;
+  background-position: top;
+  /* keeps image attached to the top, center, or bottom */
 
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%)
-    /* start top left corner go clockwise can use other measurments  */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  /* start top left corner go clockwise can use other measurments  */
 }
 
 .header__logo-box {
-    position:absolute;
-    top:40px;
-    left:40px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
 }
 
 .header__logo {
-    height: 3.5rem;
+  height: 3.5rem;
 }
 
 /* .logo:hover{
     animation: moveInRight 1s ease-out;
 } */
 .heading-primary {
-    color: $color-white;
-    text-transform:uppercase;
-    margin-bottom: 6rem;
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
 }
 
 .header__text-box {
-    position:absolute;
-    top: 40%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align: center;
-    /* transform is relative to the element itself the absolute is to the parents */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* transform is relative to the element itself the absolute is to the parents */
 }
-
-
