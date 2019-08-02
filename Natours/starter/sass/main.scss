@@ -7,14 +7,19 @@
 @import "base/_typography.scss";
 @import "base/_utilities.scss";
 
+@import "components/form";
 @import "components/button.scss";
+@import "components/_bg-video";
 @import "components/_composition";
 @import "components/feature-box";
 @import "components/_story.scss";
 @import "components/card";
 
+
 @import "layout/grid.scss";
 @import "layout/header.scss";
+@import "layout/_footer.scss";
+
 
 @import "pages/home.scss";
 
